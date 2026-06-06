@@ -12,7 +12,7 @@ from datetime import datetime
 API_ID = 33990838
 API_HASH = 'db2493f3d099768a43becc7b2f2c5226'
 BOT_TOKEN = '8820783553:AAHT9qCV-Ws7pAil_ymtb2_Lf_eVX8WfY98'
-ADMIN_ID = [5629984144]
+ADMIN_ID = [6601184733]
 CHECKER_API_URL = 'https://afuonax.up.railway.app/shopify_parallel'
 
 PREMIUM_USERS_FILE = "premium_users.txt"
@@ -61,8 +61,7 @@ def premium_emoji(text: str) -> str:
 
 def get_main_menu_keyboard(user_id=None):
     buttons = [
-        [Button.inline(" Cmd", b"show_cmds", style="success"),
-         Button.url(" Channel", "https://t.me/+kxhCcDXQgzQ5MjE0", style="success")]
+        [Button.inline(" Cmd", b"show_cmds", style="success")]
     ]
     
     if user_id and user_id in ADMIN_ID:
@@ -359,7 +358,7 @@ async def send_final_results(user_id, results):
 Hits:
 {hits_text}
 
-💡 Made by @AFUONA_V"""
+💡 Made by @Xyoshy"""
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"afuonax{timestamp}.txt"
@@ -468,9 +467,9 @@ async def start(event):
 🎁 How to use:
    🦉 Add proxy: <code>/addproxy</code>
    🦉 Add sites: <code>/site</code>
-   🦉 Check CC: <code>/cc card|mm|yy|cvv</code>
+   🦉 Check CC: <code>/sh card|mm|yy|cvv</code>
 
-💡 Made by @AFUONA_V"""
+💡 Made by @Xyoshy"""
     
     buttons = get_main_menu_keyboard(user_id)
     
@@ -481,8 +480,8 @@ async def show_commands_callback(event):
     commands_text = """📋 User Commands
 
 🛒 Shopify
-├─ <code>/cc cc|mm|yy|cvv</code> → Check single card
-└─ <code>/chk</code> → Mass check from .txt file
+├─ <code>/sh cc|mm|yy|cvv</code> → Check single card
+└─ <code>/mstxt</code> → Mass check from .txt file
 
 🔧 Site Management
 ├─ <code>/site</code> → Check & remove dead sites
@@ -543,15 +542,15 @@ async def main_menu_callback(event):
 🎁 How to use:
    ➥ Add proxy: <code>/addproxy</code>
    ➥ Add sites: <code>/site</code>
-   ➥ Check CC: <code>/cc card|mm|yy|cvv</code>
+   ➥ Check CC: <code>/sh card|mm|yy|cvv</code>
 
-💡 Made by @AFUONA_V"""
+💡 Made by @Xyoshy"""
     
     buttons = get_main_menu_keyboard(user_id)
     
     await event.edit(premium_emoji(welcome_text), buttons=buttons, parse_mode='html')
 
-@bot.on(events.NewMessage(pattern=r'^/cc\s+'))
+@bot.on(events.NewMessage(pattern=r'^/sh\s+'))
 async def single_cc_check(event):
     user_id = event.sender_id
 
@@ -579,7 +578,7 @@ async def single_cc_check(event):
     cards = extract_cc(cc_input)
 
     if not cards:
-        await event.reply(premium_emoji("❌ Invalid CC format. Use: <code>/cc card|mm|yy|cvv</code>"), parse_mode='html')
+        await event.reply(premium_emoji("❌ Invalid CC format. Use: <code>/sh card|mm|yy|cvv</code>"), parse_mode='html')
         return
 
     card = cards[0]
@@ -610,14 +609,14 @@ async def single_cc_check(event):
 🏦 Bank {bank}
 🥰 Country {country} {flag}
 
-💡 Made by @AFUONA_V"""
+💡 Made by @Xyoshy"""
 
         await status_msg.edit(premium_emoji(final_resp), parse_mode='html')
 
     except Exception as e:
         await status_msg.edit(premium_emoji(f"❌ Error: {e}"), parse_mode='html')
 
-@bot.on(events.NewMessage(pattern='/chk'))
+@bot.on(events.NewMessage(pattern='/mstxt'))
 async def check_command(event):
     user_id = event.sender_id
 
