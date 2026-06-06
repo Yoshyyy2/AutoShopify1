@@ -61,7 +61,8 @@ def premium_emoji(text: str) -> str:
 
 def get_main_menu_keyboard(user_id=None):
     buttons = [
-        [Button.inline(" Cmd", b"show_cmds", style="success")]
+        [Button.inline(" Cmd", b"show_cmds", style="success"),
+         Button.url(" Channel", "https://t.me/+kxhCcDXQgzQ5MjE0", style="success")]
     ]
     
     if user_id and user_id in ADMIN_ID:
@@ -137,7 +138,11 @@ def is_site_dead(response_msg, gateway, price):
     if not gateway or gateway == "Unknown":
         return True
     
+    if "Shopify" not in gateway:
+        return True
+    
     price_str = str(price)
+    
     if price_str in ["-", "$-", "$0", "$0.0", "0", "$0.00"]:
         return True
     
@@ -354,7 +359,7 @@ async def send_final_results(user_id, results):
 Hits:
 {hits_text}
 
-💡 Made by @Xyoshy"""
+💡 Made by @AFUONA_V"""
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"afuonax{timestamp}.txt"
@@ -465,7 +470,7 @@ async def start(event):
    🦉 Add sites: <code>/site</code>
    🦉 Check CC: <code>/cc card|mm|yy|cvv</code>
 
-💡 Made by @Xyoshy"""
+💡 Made by @AFUONA_V"""
     
     buttons = get_main_menu_keyboard(user_id)
     
@@ -540,7 +545,7 @@ async def main_menu_callback(event):
    ➥ Add sites: <code>/site</code>
    ➥ Check CC: <code>/cc card|mm|yy|cvv</code>
 
-💡 Made by @Xyoshy"""
+💡 Made by @AFUONA_V"""
     
     buttons = get_main_menu_keyboard(user_id)
     
@@ -605,7 +610,7 @@ async def single_cc_check(event):
 🏦 Bank {bank}
 🥰 Country {country} {flag}
 
-💡 Made by @Xyoshy"""
+💡 Made by @AFUONA_V"""
 
         await status_msg.edit(premium_emoji(final_resp), parse_mode='html')
 
