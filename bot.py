@@ -13,7 +13,7 @@ API_ID = 33990838
 API_HASH = 'db2493f3d099768a43becc7b2f2c5226'
 BOT_TOKEN = '8820783553:AAHT9qCV-Ws7pAil_ymtb2_Lf_eVX8WfY98'
 ADMIN_ID = [6601184733]
-CHECKER_API_URL = 'https://afuonax1.up.railway.app/shopify_parallel'
+CHECKER_API_URL = 'https://haters.cxchk.site/shopii'
 
 PREMIUM_USERS_FILE = "premium_users.txt"
 SITES_FILE = 'sites.txt'
