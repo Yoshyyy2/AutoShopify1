@@ -11,9 +11,9 @@ from datetime import datetime
 
 API_ID = 33990838
 API_HASH = 'db2493f3d099768a43becc7b2f2c5226'
-BOT_TOKEN = '8820783553:AAHT9qCV-Ws7pAil_ymtb2_Lf_eVX8WfY98'
+BOT_TOKEN = '7960823066:AAF_FXIRobjsLFcmJx8wYy-HH_7vI9lJTUQ'
 ADMIN_ID = [6601184733]
-CHECKER_API_URL = 'https://afuonax1.up.railway.app/shopify_parallel'
+CHECKER_API_URL = 'https://afuonaa.up.railway.app/shopify'
 
 PREMIUM_USERS_FILE = "premium_users.txt"
 SITES_FILE = 'sites.txt'
