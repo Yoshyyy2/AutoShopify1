@@ -153,7 +153,7 @@ def get_main_menu_keyboard(user_id=None):
     buttons = [
         [Button.inline(" Cᴍᴅ", b"show_cmds", style="primary", icon=4904936030232117798),
          Button.inline(" Tᴏᴏʟs", b"tools_menu", style="primary", icon=5361734213370396027)],
-        [Button.url(" Cʜᴀɴɴᴇʟ", "https://t.me/+kxhCcDXQgzQ5MjE0", style="success", icon=5445408306669582934)]
+        [Button.url(" Cʜᴀɴɴᴇʟ", "https://t.me/+kRFGS2YZ6VhiMTY1", style="success", icon=5445408306669582934)]
     ]
     if user_id and user_id in ADMIN_ID:
         buttons.append([Button.inline(" Aᴅᴍɪɴ Pᴀɴᴇʟ", b"admin_panel", style="success", icon=6266995104687330978)])
